@@ -1,0 +1,1217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proposta · Consultoria In Company Notion + Claude · Outsider School</title>
+<style>
+  /* ============================================================
+     OUTSIDER · PROPOSTA COMERCIAL
+     Design system: preto / branco / cinza + gradientes -75°
+     Tipografia: SF Pro Display
+     ============================================================ */
+
+  :root {
+    --c-black: #0A0A0B;
+    --c-gray-950: #0A0A0B;
+    --c-gray-900: #111114;
+    --c-gray-800: #1A1B1F;
+    --c-gray-700: #25272D;
+    --c-gray-600: #3A3D44;
+    --c-gray-500: #5A5E66;
+    --c-gray-400: #7D848B;
+    --c-gray-300: #A6ABB2;
+    --c-gray-200: #D4D7DC;
+    --c-gray-100: #ECEEF1;
+    --c-gray-50:  #F7F7F7;
+    --c-white:    #F7F7F7;
+    --c-pure-white: #FFFFFF;
+    --c-gold:   #D4AF37;
+    --c-gold-light: #F4D27A;
+
+    /* Gradientes -75° */
+    --grad-headline-light: linear-gradient(-75deg, #FFFFFF 0%, #C8CCD1 100%);
+    --grad-headline-dark:  linear-gradient(-75deg, #1A1B1F 0%, #4A4D54 100%);
+    --grad-divider:        linear-gradient(-75deg, transparent 0%, #3A3D44 50%, transparent 100%);
+    --grad-tech:           linear-gradient(-75deg, #C7B4E0 0%, #8A7BC4 50%, #4E4878 100%);
+    --grad-marketing:      linear-gradient(-75deg, #A8C4E0 0%, #6884B8 50%, #3A4A7A 100%);
+    --grad-gold:           linear-gradient(-75deg, #F4D27A 0%, #D4AF37 50%, #8C7321 100%);
+    --grad-cobranca:       linear-gradient(-75deg, #C8CCD1 0%, #7D848B 50%, #3A3D44 100%);
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+                 "Inter", system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
+    --r-md: 10px;
+    --r-lg: 14px;
+    --r-xl: 18px;
+    --r-2xl: 24px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--c-white);
+    background: var(--c-gray-950);
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ===================== TIPOGRAFIA ===================== */
+
+  h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .display {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    background: var(--grad-headline-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .display-dark {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    background: var(--grad-headline-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.025em; }
+  .h3 { font-size: clamp(20px, 2.4vw, 28px); font-weight: 600; }
+  .h4 { font-size: 18px; font-weight: 600; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--c-gray-400);
+  }
+
+  .lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: var(--c-gray-300);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  p { color: var(--c-gray-300); font-weight: 400; }
+  p.tight { color: var(--c-white); font-weight: 400; }
+
+  strong { color: var(--c-pure-white); font-weight: 600; }
+
+  /* ===================== LAYOUT ===================== */
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  section {
+    padding: 96px 0;
+    position: relative;
+  }
+
+  section.light {
+    background: var(--c-gray-50);
+    color: var(--c-gray-950);
+  }
+  section.light p { color: var(--c-gray-600); }
+  section.light strong { color: var(--c-black); }
+  section.light .eyebrow { color: var(--c-gray-500); }
+  section.light .display { background: var(--grad-headline-dark); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .divider {
+    height: 1px;
+    background: var(--grad-divider);
+    margin: 0;
+  }
+
+  /* ===================== HERO / CAPA ===================== */
+
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 0 64px;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(156,178,212,0.08) 0%, transparent 60%),
+      var(--c-gray-950);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -40% -10%;
+    height: 60%;
+    background: linear-gradient(-75deg, transparent 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--c-gray-400);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--c-white);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    font-size: 16px;
+  }
+
+  .brand-mark svg { width: 28px; height: 28px; flex: none; }
+  section.light .brand-mark { color: var(--c-black); }
+
+  .hero-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 80px 0;
+  }
+
+  .hero-content .eyebrow { margin-bottom: 24px; }
+  .hero-content h1 { margin-bottom: 32px; max-width: 18ch; }
+  .hero-content .lead { max-width: 56ch; }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 48px;
+    border-top: 1px solid var(--c-gray-800);
+  }
+
+  .hero-meta div span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-gray-500);
+    margin-bottom: 8px;
+  }
+
+  .hero-meta div strong {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--c-white);
+  }
+
+  /* ===================== ENTENDIMENTO ===================== */
+
+  .quote-block {
+    border-left: 2px solid var(--c-gray-700);
+    padding: 8px 0 8px 32px;
+    margin: 32px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--c-gray-300);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* ===================== PROFISSIONAIS ===================== */
+
+  .pros-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+  }
+
+  .pro-card {
+    background: var(--c-pure-white);
+    border-radius: var(--r-2xl);
+    overflow: hidden;
+    box-shadow: 0 24px 48px -12px rgba(10,10,11,0.18);
+    border: 1px solid var(--c-gray-200);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pro-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    background: var(--c-gray-100);
+    filter: grayscale(0.15);
+  }
+
+  .pro-body {
+    padding: 32px;
+  }
+
+  .pro-body h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--c-black);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .pro-role {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--c-gray-500);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .pro-bio {
+    font-size: 15px;
+    color: var(--c-gray-600);
+    line-height: 1.65;
+  }
+
+  .pro-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--c-gray-200);
+  }
+
+  .pro-stat strong {
+    display: block;
+    font-size: 22px;
+    color: var(--c-black);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .pro-stat span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-gray-500);
+    font-weight: 500;
+  }
+
+  /* ===================== O QUE ENTREGAMOS / PILARES ===================== */
+
+  .pillars {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .pillar {
+    padding: 32px;
+    background: var(--c-gray-900);
+    border: 1px solid var(--c-gray-800);
+    border-radius: var(--r-xl);
+    transition: transform 240ms cubic-bezier(0.16,1,0.3,1), border-color 240ms;
+  }
+
+  .pillar:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-gray-600);
+  }
+
+  .pillar-num {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-gray-500);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .pillar h4 { color: var(--c-white); margin-bottom: 12px; font-size: 20px; letter-spacing: -0.01em; }
+  .pillar p { color: var(--c-gray-400); font-size: 14px; line-height: 1.6; }
+
+  /* ===================== METODOLOGIA / FASES ===================== */
+
+  .phases {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--c-gray-200);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    background: var(--c-pure-white);
+  }
+
+  .phase {
+    padding: 32px 28px;
+    border-right: 1px solid var(--c-gray-200);
+    position: relative;
+  }
+  .phase:last-child { border-right: 0; }
+
+  .phase-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--c-gray-950);
+    color: var(--c-white);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .phase h4 {
+    color: var(--c-black);
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .phase-when {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-gray-500);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .phase p {
+    font-size: 13px;
+    color: var(--c-gray-600);
+    line-height: 1.55;
+  }
+
+  /* ===================== CONTEÚDO PROGRAMÁTICO ===================== */
+
+  .module {
+    padding: 40px;
+    border-radius: var(--r-xl);
+    background: var(--c-gray-900);
+    border: 1px solid var(--c-gray-800);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--c-pure-white);
+  }
+
+  .module-tag.claude { background: var(--grad-tech); }
+  .module-tag.notion { background: var(--grad-marketing); }
+
+  .module h3 {
+    color: var(--c-white);
+    margin-bottom: 16px;
+    font-size: 26px;
+  }
+
+  .module ul {
+    list-style: none;
+    margin-top: 16px;
+  }
+
+  .module li {
+    padding: 10px 0 10px 22px;
+    color: var(--c-gray-300);
+    font-size: 14px;
+    line-height: 1.55;
+    border-bottom: 1px solid var(--c-gray-800);
+    position: relative;
+  }
+  .module li:last-child { border-bottom: 0; }
+
+  .module li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 18px;
+    width: 8px; height: 1px;
+    background: var(--c-gray-500);
+  }
+
+  /* ===================== PACOTES / INVESTIMENTO ===================== */
+
+  .packages {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .pkg {
+    background: var(--c-pure-white);
+    border-radius: var(--r-2xl);
+    padding: 40px;
+    border: 1px solid var(--c-gray-200);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pkg.recommended {
+    border: 0;
+    background: var(--c-gray-950);
+    color: var(--c-white);
+    box-shadow: 0 24px 48px -12px rgba(10,10,11,0.30);
+    position: relative;
+  }
+  .pkg.recommended::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--r-2xl);
+    background: var(--grad-gold);
+    z-index: -1;
+    opacity: 0.55;
+  }
+
+  .pkg .badge-rec {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: var(--grad-gold);
+    color: #1a1308;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px -4px rgba(212,175,55,0.45);
+  }
+
+  .pkg-name {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    color: var(--c-gray-500);
+    margin-bottom: 12px;
+  }
+  .pkg.recommended .pkg-name { color: var(--c-gold-light); }
+
+  .pkg-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--c-black);
+  }
+  .pkg.recommended .pkg-title { color: var(--c-white); }
+
+  .pkg-summary {
+    font-size: 15px;
+    color: var(--c-gray-600);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .pkg.recommended .pkg-summary { color: var(--c-gray-300); }
+
+  .pkg-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 24px 0;
+    margin: 16px 0 28px;
+    border-top: 1px solid var(--c-gray-200);
+    border-bottom: 1px solid var(--c-gray-200);
+  }
+  .pkg.recommended .pkg-price { border-color: var(--c-gray-700); }
+
+  .pkg-price .currency {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--c-gray-500);
+  }
+  .pkg.recommended .pkg-price .currency { color: var(--c-gray-400); }
+
+  .pkg-price .value {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--c-black);
+    line-height: 1;
+  }
+  .pkg.recommended .pkg-price .value {
+    background: var(--grad-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .pkg-price .unit {
+    font-size: 13px;
+    color: var(--c-gray-500);
+    margin-left: 4px;
+  }
+
+  .pkg ul {
+    list-style: none;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .pkg li {
+    padding: 12px 0 12px 28px;
+    font-size: 14px;
+    color: var(--c-gray-700);
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--c-gray-100);
+  }
+  .pkg li:last-child { border-bottom: 0; }
+  .pkg.recommended li { color: var(--c-gray-200); border-color: var(--c-gray-800); }
+
+  .pkg li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 19px;
+    width: 14px; height: 2px;
+    background: var(--c-black);
+  }
+  .pkg.recommended li::before { background: var(--c-gold); }
+
+  /* ===================== FORMATO E CONDIÇÕES ===================== */
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--c-gray-800);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    margin-top: 56px;
+  }
+
+  .info-cell {
+    padding: 32px;
+    border-bottom: 1px solid var(--c-gray-800);
+    border-right: 1px solid var(--c-gray-800);
+  }
+  .info-cell:nth-child(2n) { border-right: 0; }
+  .info-cell:nth-last-child(-n+2) { border-bottom: 0; }
+
+  .info-cell .eyebrow { margin-bottom: 12px; display: block; }
+  .info-cell h4 { font-size: 22px; color: var(--c-white); margin-bottom: 12px; letter-spacing: -0.01em; }
+  .info-cell p { font-size: 14px; color: var(--c-gray-400); line-height: 1.6; }
+
+  /* ===================== CTA / FECHAMENTO ===================== */
+
+  .cta {
+    text-align: center;
+    padding: 120px 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(212,175,55,0.08) 0%, transparent 70%),
+      var(--c-gray-950);
+  }
+
+  .cta h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    background: var(--grad-headline-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    max-width: 22ch;
+    margin-inline: auto;
+    line-height: 1.1;
+  }
+
+  .cta p { color: var(--c-gray-400); max-width: 60ch; margin: 0 auto 32px; font-size: 16px; }
+
+  .cta-actions {
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 240ms cubic-bezier(0.16,1,0.3,1), background 240ms;
+  }
+
+  .btn-primary {
+    background: var(--c-pure-white);
+    color: var(--c-black);
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: var(--c-gold-light); }
+
+  .btn-ghost {
+    color: var(--c-white);
+    border-color: var(--c-gray-700);
+  }
+  .btn-ghost:hover { border-color: var(--c-white); }
+
+  /* ===================== RODAPÉ ===================== */
+
+  footer {
+    padding: 56px 0 80px;
+    background: var(--c-gray-950);
+    border-top: 1px solid var(--c-gray-800);
+    color: var(--c-gray-500);
+    font-size: 12px;
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .signature {
+    color: var(--c-gray-300);
+    font-size: 13px;
+    letter-spacing: -0.005em;
+  }
+
+  /* ===================== RESPONSIVO ===================== */
+
+  @media (max-width: 880px) {
+    section { padding: 64px 0; }
+    .container { padding: 0 20px; }
+    .grid-2, .grid-3, .pillars, .packages, .pros-wrap { grid-template-columns: 1fr; gap: 24px; }
+    .phases { grid-template-columns: 1fr 1fr; }
+    .phase { border-right: 1px solid var(--c-gray-200); border-bottom: 1px solid var(--c-gray-200); }
+    .phase:nth-child(2n) { border-right: 0; }
+    .phase:nth-last-child(-n+2) { border-bottom: 0; }
+    .info-grid { grid-template-columns: 1fr; }
+    .info-cell { border-right: 0; }
+    .info-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--c-gray-800); }
+    .info-cell:last-child { border-bottom: 0; }
+    .hero-meta { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media print {
+    section { padding: 48px 0; page-break-inside: avoid; }
+    .pkg, .pillar, .module, .pro-card, .phase { page-break-inside: avoid; }
+    body { background: white; color: var(--c-black); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ========================== HERO / CAPA ========================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div class="brand-mark">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Outsider School">
+            <circle cx="38" cy="50" r="20" fill="currentColor"/>
+            <path d="M62 30 A20 20 0 0 1 62 70 Z" fill="currentColor"/>
+          </svg>
+          Outsider School
+        </div>
+        <div>Proposta · Confidencial · Maio · 2026</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="eyebrow">Consultoria In Company · Notion + Claude</div>
+        <h1 class="display">Da ferramenta solta à operação centralizada.</h1>
+        <p class="lead">
+          Uma proposta para a <strong>Milano Incorporadora</strong> implantar
+          Notion e Claude como infraestrutura oficial de trabalho — com nivelamento
+          prático e aplicado da equipe, conduzido por quem usa essas ferramentas
+          todos os dias para operar uma empresa de R$ 35M.
+        </p>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <span>Cliente</span>
+          <strong>Milano Incorporadora</strong>
+        </div>
+        <div>
+          <span>Equipe</span>
+          <strong>20 colaboradores · 7 áreas</strong>
+        </div>
+        <div>
+          <span>Entrega</span>
+          <strong>Bruno Gomes · Samara Eriksson</strong>
+        </div>
+        <div>
+          <span>Data</span>
+          <strong>07 · maio · 2026</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== ENTENDIMENTO ========================== -->
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">01 · Entendimento</div>
+          <h2 class="h2" style="margin-top:16px;">O que entendemos do desafio.</h2>
+        </div>
+        <div>
+          <p style="font-size:17px; line-height:1.7;">
+            A Milano está em <strong>fase de implantação</strong> do Notion e do Claude
+            como ferramentas oficiais de operação. O risco nessa fase nunca é
+            tecnológico — é de <strong>adoção</strong>. Sem direção e sem boas
+            práticas comuns, cada área usa as ferramentas de um jeito, e o ganho de
+            integração se perde antes de aparecer.
+          </p>
+          <div class="quote-block">
+            "O Claude como IA oficial de trabalho. O Notion como ferramenta
+            oficial para atas, agendas, planos de ação e integração entre as áreas."
+          </div>
+          <p style="font-size:17px; line-height:1.7;">
+            A consultoria aqui proposta cuida exatamente disso: <strong>levar
+            todos para o mesmo patamar</strong>, com exemplos aplicados à rotina da
+            construtora — diretoria, ADM-FIN, controladoria, RH, engenharia, compras
+            e marketing — para que cada uma das 7 áreas saiba <em>o que fazer no
+            primeiro dia útil seguinte</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========================== QUEM ENTREGA ========================== -->
+  <section class="light">
+    <div class="container">
+      <div class="eyebrow">02 · Quem entrega</div>
+      <h2 class="display-dark" style="margin-top:16px; max-width:18ch;">A dupla por trás da entrega.</h2>
+      <p style="font-size:18px; max-width:64ch; margin-top:24px; color: var(--c-gray-600); line-height:1.65;">
+        Você não vai contratar um curso genérico. Vai contratar uma consultoria
+        feita por duas pessoas que usam Notion e Claude todos os dias para operar a
+        Outsider School / MQV Company — e que vão transferir essa prática para o
+        time da Milano.
+      </p>
+
+      <div class="pros-wrap">
+        <div class="pro-card">
+          <img src="assets/bruno.jpg" alt="Bruno Gomes" class="pro-photo">
+          <div class="pro-body">
+            <h3>Bruno Gomes</h3>
+            <div class="pro-role">Fundador · Mentor · Estrategista</div>
+            <p class="pro-bio">
+              Fundador da Outsider School e da MQV Company. Construiu uma operação
+              digital que já faturou <strong>R$ 35M</strong> — sendo R$ 10M apenas
+              em produtos digitais — usando Notion como sistema operacional e
+              Claude como copiloto cotidiano. É autor da metodologia
+              <strong>Perpétua Sem Segredo</strong> e do framework
+              <strong>Filtro de Valor Progressivo</strong>, ensinados a centenas
+              de empresas. No projeto Milano, conduz o pré-diagnóstico e a
+              estratégia, garantindo que o conteúdo aplicado bata na rotina real
+              de cada área.
+            </p>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <strong>R$ 35M+</strong>
+                <span>Faturados na operação</span>
+              </div>
+              <div class="pro-stat">
+                <strong>5+ anos</strong>
+                <span>Operando com Notion + IA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pro-card">
+          <img src="assets/samara.jpg" alt="Samara Eriksson" class="pro-photo">
+          <div class="pro-body">
+            <h3>Samara Eriksson</h3>
+            <div class="pro-role">Diretora de Operações · Outsider School</div>
+            <p class="pro-bio">
+              Responsável pela operação da Outsider School. Implementa, no dia a
+              dia, exatamente o que a Milano quer construir: <strong>Notion como
+              fonte da verdade</strong> entre áreas, <strong>Claude como
+              extensão do time</strong> em produtividade, comunicação e análise.
+              Lidera o time, estrutura processos e roda os hubs internos — Hub de
+              Indicadores, Hub OutJourney (CRM CS), Hub Financeiro. No projeto
+              Milano, conduz a <strong>entrega presencial</strong> com a equipe e
+              os encontros de acompanhamento.
+            </p>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <strong>7 áreas</strong>
+                <span>Sob gestão na Outsider</span>
+              </div>
+              <div class="pro-stat">
+                <strong>Notion-first</strong>
+                <span>Operação 100% integrada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== PILARES ========================== -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">03 · O que entregamos</div>
+      <h2 class="display" style="margin-top:16px; max-width:20ch;">Três pilares para que a adoção pegue.</h2>
+      <p class="lead" style="margin-top:24px; max-width:60ch;">
+        Consultoria não é palestra. É deixar cada colaborador da Milano
+        confortável para abrir Notion e Claude na manhã seguinte e <strong>resolver
+        algo real</strong>. Por isso, três pilares:
+      </p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">Pilar 01</div>
+          <h4>Prático e aplicado</h4>
+          <p>
+            Nada de teoria solta. Cada bloco do treinamento parte de um caso real
+            da rotina da construtora — ata, plano de ação, briefing de
+            engenharia, follow-up comercial — e termina com a equipe executando
+            ali, ao vivo, na ferramenta.
+          </p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 02</div>
+          <h4>Nivelamento real</h4>
+          <p>
+            Trilhas e exemplos para iniciantes <em>e</em> intermediários na mesma
+            consultoria. Quem nunca abriu Notion sai usando; quem já usa avança
+            para templates, automações e integração entre áreas. Ninguém fica
+            para trás, ninguém entedia.
+          </p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Pilar 03</div>
+          <h4>Boas práticas que ficam</h4>
+          <p>
+            Saímos com um <strong>manual de boas práticas Milano</strong>:
+            convenções de nomenclatura, estrutura de workspace por área,
+            templates oficiais e regras de uso do Claude (o que pode, o que não
+            pode, como pedir bem). É o que sobra no dia 31.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========================== METODOLOGIA / FASES ========================== -->
+  <section class="light">
+    <div class="container">
+      <div class="eyebrow">04 · Como conduzimos</div>
+      <h2 class="display-dark" style="margin-top:16px; max-width:18ch;">Quatro fases, do diagnóstico à autonomia.</h2>
+      <p style="font-size:17px; max-width:64ch; margin-top:24px; color: var(--c-gray-600);">
+        A consultoria não começa no dia presencial. Começa antes, com um
+        diagnóstico online que faz toda a diferença na hora de calibrar o
+        conteúdo para a Milano.
+      </p>
+
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-step">1</div>
+          <div class="phase-when">Semana -1</div>
+          <h4>Pré-diagnóstico</h4>
+          <p>
+            Encontro online de 60 a 90 min com lideranças e amostra do time.
+            Mapeamos rotinas reais, dores específicas por área e pontos onde
+            Notion e Claude vão render mais. Conduzido pelo Bruno.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="phase-step">2</div>
+          <div class="phase-when">Semana 0</div>
+          <h4>Imersão presencial</h4>
+          <p>
+            Dois dias com a equipe completa (ou em duas turmas). Conteúdo
+            calibrado a partir do diagnóstico. Construção de templates, atas,
+            planos de ação e fluxos com Claude — tudo na ferramenta, ao vivo.
+            Conduzido pela Samara.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="phase-step">3</div>
+          <div class="phase-when">Semanas 1 a 4</div>
+          <h4>Acompanhamento</h4>
+          <p>
+            Encontros online de tira-dúvidas e ajuste fino. A equipe traz
+            problemas reais aparecidos na semana, e resolvemos juntos. É o que
+            transforma aprendizado de evento em rotina permanente.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="phase-step">4</div>
+          <div class="phase-when">Dia 30</div>
+          <h4>Entrega e autonomia</h4>
+          <p>
+            Manual Milano consolidado, workspace Notion estruturado, prompts
+            oficiais para Claude, retrospectiva com lideranças e plano de
+            evolução para os próximos 60 dias.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== CONTEÚDO PROGRAMÁTICO ========================== -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">05 · Conteúdo programático</div>
+      <h2 class="display" style="margin-top:16px; max-width:18ch;">O que cada pessoa sai dominando.</h2>
+
+      <div class="grid-2" style="margin-top: 56px; align-items:stretch;">
+        <div class="module">
+          <span class="module-tag claude">Trilha Claude</span>
+          <h3>IA oficial de trabalho.</h3>
+          <p style="color: var(--c-gray-300); font-size:15px; line-height:1.6;">
+            Claude deixa de ser "uma curiosidade" e vira um copiloto disciplinado.
+            Cada colaborador sai sabendo quando usar, como pedir, o que evitar.
+          </p>
+          <ul>
+            <li>Produtividade pessoal: e-mails, atas, resumos, brainstorms guiados</li>
+            <li>Elaboração e revisão de documentos, comunicados e materiais internos</li>
+            <li>Análises de dados, planilhas e relatórios — sem precisar saber fórmula</li>
+            <li>Comunicação: WhatsApp, e-mails comerciais, materiais de marketing</li>
+            <li>Estruturação de processos, SOPs e POPs a partir de descrições verbais</li>
+            <li>Boas práticas: o que pode entrar no Claude, o que não pode (LGPD, dados sensíveis)</li>
+            <li>Biblioteca de prompts oficiais Milano — pronta para uso</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-tag notion">Trilha Notion</span>
+          <h3>Sistema operacional da empresa.</h3>
+          <p style="color: var(--c-gray-300); font-size:15px; line-height:1.6;">
+            Notion sai do "wiki bagunçado" e vira <strong>fonte da verdade</strong>
+            entre áreas. Atas reais, planos vivos, processos rastreáveis.
+          </p>
+          <ul>
+            <li>Fundamentos: páginas, blocos, databases, views — o suficiente, sem excesso</li>
+            <li>Atas e agendas: padrão Milano com responsáveis, prazos e desdobramentos</li>
+            <li>Planos de ação: do registro à execução, com follow-up integrado</li>
+            <li>Acompanhamento de atividades e indicadores por área</li>
+            <li>Integração entre áreas: como Engenharia, Compras, ADM-FIN se conversam</li>
+            <li>Templates oficiais Milano por área (Diretoria, RH, Marketing, etc.)</li>
+            <li>Regras de organização, permissões e governança do workspace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========================== INVESTIMENTO ========================== -->
+  <section class="light">
+    <div class="container">
+      <div class="eyebrow">06 · Investimento</div>
+      <h2 class="display-dark" style="margin-top:16px; max-width:18ch;">Dois formatos. Você escolhe.</h2>
+      <p style="font-size:17px; max-width:62ch; margin-top:24px; color: var(--c-gray-600); line-height:1.65;">
+        Recomendamos o <strong>Formato Imersão</strong> — a presença física da
+        Samara dois dias muda completamente o engajamento e a velocidade de
+        adoção. Mas oferecemos também um formato 100% online para o caso de
+        agenda apertada ou orçamento mais enxuto.
+      </p>
+
+      <div class="packages">
+        <!-- Pacote recomendado -->
+        <div class="pkg recommended">
+          <div class="badge-rec">Recomendado</div>
+          <div class="pkg-name">Formato Imersão</div>
+          <div class="pkg-title">Presencial + 30 dias de acompanhamento</div>
+          <p class="pkg-summary">
+            Dois dias presenciais com a equipe completa, antecedidos pelo
+            pré-diagnóstico online com o Bruno e seguidos por 4 semanas de
+            acompanhamento — incluindo 2 encontros online em grupo para tira-dúvidas.
+          </p>
+
+          <div class="pkg-price">
+            <span class="currency">R$</span>
+            <span class="value">30.000</span>
+            <span class="unit">à vista</span>
+          </div>
+
+          <ul>
+            <li>1 encontro online de pré-diagnóstico (Bruno) — 60 a 90 min</li>
+            <li>2 dias presenciais de imersão com a equipe (Samara)</li>
+            <li>Material físico e digital com boas práticas Milano</li>
+            <li>30 dias de acompanhamento pós-imersão</li>
+            <li>2 encontros online em grupo para tira-dúvidas (durante os 30 dias)</li>
+            <li>Workspace Notion estruturado e biblioteca de prompts Claude</li>
+            <li>Retrospectiva final e plano de evolução de 60 dias</li>
+          </ul>
+        </div>
+
+        <!-- Pacote alternativo -->
+        <div class="pkg">
+          <div class="pkg-name">Formato Online</div>
+          <div class="pkg-title">100% remoto · 4 encontros em 30 dias</div>
+          <p class="pkg-summary">
+            Quatro encontros online ao longo de 30 dias, divididos entre conteúdo
+            estruturado e prática aplicada. Indicado quando a agenda não comporta
+            o presencial ou quando o time já tem maturidade digital.
+          </p>
+
+          <div class="pkg-price">
+            <span class="currency">R$</span>
+            <span class="value">20.000</span>
+            <span class="unit">à vista</span>
+          </div>
+
+          <ul>
+            <li>1 encontro online de pré-diagnóstico (Bruno)</li>
+            <li>4 encontros online estruturados ao longo de 30 dias</li>
+            <li>Trilhas separadas para Claude e Notion</li>
+            <li>Material digital com boas práticas Milano</li>
+            <li>Workspace Notion estruturado e biblioteca de prompts Claude</li>
+            <li>Suporte assíncrono entre os encontros</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:13px; color: var(--c-gray-500); margin-top:32px; line-height:1.6;">
+        <strong>Condições:</strong> entrada de 50% no aceite + 50% na entrega.
+        Parcelamento em até 3x sem juros mediante alinhamento. Valores válidos
+        por 15 dias a partir desta proposta. Não inclui deslocamento e
+        hospedagem da Samara para a imersão presencial — orçados à parte conforme
+        cidade do evento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================== FORMATO E CONDIÇÕES ========================== -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">07 · Formato e condições</div>
+      <h2 class="display" style="margin-top:16px; max-width:22ch;">Detalhes operacionais para você decidir com clareza.</h2>
+
+      <div class="info-grid">
+        <div class="info-cell">
+          <span class="eyebrow">Carga horária</span>
+          <h4>16h presenciais + 6h online</h4>
+          <p>
+            Imersão de 2 dias × 8h, mais o pré-diagnóstico (1h30) e os 2
+            encontros de acompanhamento (2h cada). No formato online: 4 encontros
+            de 2h30, totalizando 10h ao vivo.
+          </p>
+        </div>
+
+        <div class="info-cell">
+          <span class="eyebrow">Formato da entrega</span>
+          <h4>Calibrada à equipe e ao desafio</h4>
+          <p>
+            Cada empresa tem uma maturidade digital diferente. A consultoria se
+            ajusta — em ritmo, profundidade e divisão de turmas — a partir do que
+            descobrirmos no pré-diagnóstico. Não é um curso pronto: é um trabalho
+            sob medida para a realidade da Milano.
+          </p>
+        </div>
+
+        <div class="info-cell">
+          <span class="eyebrow">Local</span>
+          <h4>Sede da Milano · sala única</h4>
+          <p>
+            Imersão presencial na sede da empresa. Necessário projetor, internet
+            estável e que cada participante tenha um notebook (ou pelo menos um
+            por dupla). Os encontros online acontecem por Google Meet ou Zoom.
+          </p>
+        </div>
+
+        <div class="info-cell">
+          <span class="eyebrow">Próxima janela</span>
+          <h4>A combinar — disponibilidade em 30 dias</h4>
+          <p>
+            A partir do aceite e do agendamento do pré-diagnóstico, conseguimos
+            reservar a imersão presencial dentro de 30 a 45 dias. Para o formato
+            online, em até 15 dias.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== CTA / FECHAMENTO ========================== -->
+  <section class="cta">
+    <div class="container">
+      <div class="eyebrow" style="margin-bottom:24px;">Próximos passos</div>
+      <h2>Vamos transformar a implantação em adoção real.</h2>
+      <p>
+        O melhor próximo passo é agendarmos o <strong>pré-diagnóstico</strong>.
+        Não há compromisso ainda — é um encontro de 60 minutos para entender a
+        Milano por dentro, validar se a abordagem encaixa e responder qualquer
+        dúvida que esta proposta tenha deixado em aberto.
+      </p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5548988597291" class="btn btn-primary">WhatsApp · (48) 98859-7291</a>
+        <a href="mailto:contato@outsiderschool.com.br" class="btn btn-ghost">contato@outsiderschool.com.br</a>
+      </div>
+
+      <p class="signature" style="margin-top:64px;">
+        Com cuidado e atenção aos detalhes,<br>
+        <strong style="color: var(--c-white); font-weight: 600;">Samara Eriksson &amp; Bruno Gomes</strong> · Outsider School
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 · Outsider School · MQV Company</div>
+      <div>Proposta confidencial — destinada à Milano Incorporadora</div>
+    </div>
+  </footer>
+
+</body>
+</html>
